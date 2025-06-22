@@ -1,0 +1,58 @@
+/* Basic Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #141118;
+    font-family: 'Space Grotesk';
+}
+
+.site-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1rem 2rem;
+    background-color: #302938;
+    color: #fff;
+    border-block-end: 3px #AB9EBA double;
+}
+
+.site-header span {
+    color: #AB9EBA;
+}
+
+.site-header span:hover {
+    color: #8d7c9f;
+}
+
+/* Logo container: inline flex so icon + text align */
+.logo {
+  display: inline-flex;
+  align-items: center;
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #fff;
+}
+
+/* Logo icon sizing & spacing */
+.logo-icon {
+  width: 62px;       
+  height: auto;
+  margin-right: 0.5rem;
+}
+
+/* Nav - desktop */
+.site-nav ul {
+    list-style: none;
+    display: flex;
+    gap: 1.5rem;
+}
+
+.site-nav a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 1rem;
+}
