@@ -14,23 +14,137 @@
     <!-- header here -->
     <div data-include="/layout/header.html"></div>
     <!-- main here -->
-    <main>
-      <h1>Home Page</h1>
-      <p>
-        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Fugiat quo
-        corrupti dolores laboriosam nesciunt temporibus unde itaque iusto
-        laborum sint dolorem quidem, nemo in pariatur dolore maxime vel iste
-        consectetur, eos, molestiae officiis amet perferendis deleniti! Nulla,
-        ullam minus repudiandae, odio sit quaerat tenetur accusantium numquam
-        iste eos quae! Eum ad voluptates laudantium molestiae minus saepe
-        eveniet molestias tenetur aspernatur quasi fugit cum deleniti ratione a
-        delectus cumque porro, quos eaque, dolorem, quidem impedit possimus
-        reprehenderit quo? Commodi facere quisquam veritatis hic! Dolorum
-        inventore porro optio, suscipit eligendi animi eos mollitia voluptatibus
-        exercitationem molestias sequi sint nulla laboriosam distinctio ex!
-      </p>
-      <h2></h2>
-      <h2>Projects</h2>
+    <main class="home-main">
+      <!-- Hero / Intro -->
+      <section id="hero" class="hero-section">
+        <div class="hero-wrapper">
+          <div class="hero-content">
+            <h1>Hello, I’m Jasfer S. Daniel</h1>
+            <p>
+              A Software Engineer with a knack for haunting bugs and summoning
+              clean, scalable code—just like Gengar in a spooky fog.
+            </p>
+            <a
+              href="/assets/files/Jasfer_Daniel_CV.pdf"
+              class="btn-primary download-btn"
+              download
+            >
+              Download CV
+            </a>
+          </div>
+          <div class="hero-image">
+            <img
+              src="/assets/images/Daniel - Toga(No Background).png"
+              alt="Image of Jasfer S. Daniel"
+            />
+          </div>
+        </div>
+      </section>
+
+      <!-- About Me -->
+      <section id="about" class="about-section">
+        <h2>About Me</h2>
+        <p>
+          I graduated with a Bachelor of Science in Computer Science from
+          Pamantasan ng Lungsod ng Maynila. Over the past 3 years, I’ve built
+          scalable web applications in ASP.NET, Django, and Node.js, and I love
+          collaborating on open-source projects, solving complex algorithms, and
+          learning new technologies.
+        </p>
+      </section>
+
+      <!-- Skills -->
+      <section id="skills" class="skills-section">
+        <h2>Technical Skills</h2>
+        <ul class="skills-list">
+          <li>
+            <strong>Languages:</strong> C#, Python, JavaScript (ES6+),
+            TypeScript
+          </li>
+          <li>
+            <strong>Frameworks:</strong> ASP.NET Core, Django, React, Express
+          </li>
+          <li><strong>Databases:</strong> SQL Server, PostgreSQL, MongoDB</li>
+          <li>
+            <strong>Tools & DevOps:</strong> Git, Docker, Azure, AWS, CI/CD
+          </li>
+          <li><strong>Testing:</strong> xUnit, pytest, Jest</li>
+        </ul>
+      </section>
+
+      <!-- Featured Projects -->
+      <section id="projects" class="projects-section">
+        <h2>Featured Projects</h2>
+        <div class="project-cards">
+          <!-- Project 1 -->
+          <article class="project-card">
+            <h3>Movie Ticketing System</h3>
+            <p>
+              An ASP.NET MVC 5 web app that lets users browse and book movie
+              tickets, complete with role-based authentication, real-time seat
+              availability, and PDF downloads of tickets.
+            </p>
+            <a href="/pages/project.html#movie-ticketing" class="btn-secondary"
+              >Read More</a
+            >
+          </article>
+          <!-- Project 2 -->
+          <article class="project-card">
+            <h3>Student Management Portal</h3>
+            <p>
+              A Django-powered portal for schools: students can register, submit
+              assignments, and view grades. Includes custom form styling, file
+              uploads, and admin dashboard graphs.
+            </p>
+            <a href="/pages/project.html#student-portal" class="btn-secondary"
+              >Read More</a
+            >
+          </article>
+        </div>
+      </section>
+
+      <!-- Experience -->
+      <section id="experience" class="experience-section">
+        <h2>Experience</h2>
+        <ul class="experience-list">
+          <li>
+            <h4>Software Engineer, ABC Tech</h4>
+            <span class="date-range">Aug 2023 – Present</span>
+            <p>
+              Building and maintaining microservices in .NET Core, integrating
+              with Azure Functions, and improving CI/CD pipelines to reduce
+              deployment time by 40%.
+            </p>
+          </li>
+          <li>
+            <h4>Junior Developer, XYZ Solutions</h4>
+            <span class="date-range">Jun 2021 – Jul 2023</span>
+            <p>
+              Developed and styled front-end components in React, collaborated
+              on RESTful APIs, and optimized database queries to improve page
+              load performance by 25%.
+            </p>
+          </li>
+        </ul>
+      </section>
+
+      <!-- Education -->
+      <section id="education" class="education-section">
+        <h2>Education</h2>
+        <p>
+          <strong>XYZ University</strong> — B.S. Computer Science
+          <span class="date-range">2017 – 2021</span>
+        </p>
+      </section>
+
+      <!-- Contact / Call to Action -->
+      <section id="contact" class="contact-section">
+        <h2>Let’s Work Together</h2>
+        <p>
+          Have a project in mind or want to say hello? Feel free to reach out!
+        </p>
+        <a href="mailto:youremail@gmail.com" class="btn-primary">Email Me</a>
+      </section>
     </main>
     <!-- footer here -->
     <div data-include="/layout/footer.html"></div>
