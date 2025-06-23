@@ -1,58 +1,263 @@
-/* Basic Reset */
+/* ========== THEME VARIABLES ========== */
+:root {
+  --bg-page: #141118;
+  --bg-header: #302938;
+  --border-header: #ab9eba;
+  --text-primary: #ffffff;
+  --text-accent: #ab9eba;
+  --text-accent-hover: #c1b3d0;
+
+  --space-sm: 0.5rem;
+  --space-md: 1rem;
+  --space-lg: 2rem;
+}
+
+/* ========== RESET & BASE ========== */
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
-
 body {
-    background-color: #141118;
-    font-family: 'Space Grotesk';
+  background-color: var(--bg-page);
+  font-family: 'Space Grotesk', sans-serif;
+  color: var(--text-primary);
+  line-height: 1.5;
 }
 
+/* ========== HEADER ========== */
 .site-header {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 1rem 2rem;
-    background-color: #302938;
-    color: #fff;
-    border-block-end: 3px #AB9EBA double;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: var(--space-md) var(--space-lg);
+  background-color: var(--bg-header);
+  border-bottom: 3px double var(--border-header);
+  position: relative;
+  z-index: 1000;
 }
 
-.site-header span {
-    color: #AB9EBA;
-}
-
-.site-header span:hover {
-    color: #8d7c9f;
-}
-
-/* Logo container: inline flex so icon + text align */
+/* Logo */
 .logo {
-  display: inline-flex;
+  display: flex;
   align-items: center;
   font-size: 1.5rem;
   font-weight: bold;
-  color: #fff;
 }
-
-/* Logo icon sizing & spacing */
 .logo-icon {
-  width: 62px;       
+  width: 80px;
   height: auto;
-  margin-right: 0.5rem;
+  margin-right: var(--space-sm);
+  transition: transform 0.3s ease;
+}
+.logo-icon:hover {
+  transform: rotate(15deg);
+}
+.site-header span {
+  color: var(--text-accent);
+  margin-left: var(--space-sm);
+  transition: color 0.2s ease;
+}
+.site-header span:hover {
+  color: var(--text-accent-hover);
 }
 
-/* Nav - desktop */
+/* NAVIGATION */
+.site-nav {
+  transition: max-height 0.3s ease;
+}
 .site-nav ul {
-    list-style: none;
-    display: flex;
-    gap: 1.5rem;
+  list-style: none;
+  display: flex;
+  gap: var(--space-lg);
+}
+.site-nav a {
+  font-size: 1rem;
+  text-decoration: none;
+  color: var(--text-primary);
+  position: relative;
+  padding: var(--space-sm) 0;
+  transition: color 0.2s ease;
+}
+.site-nav a::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: -3px;
+  width: 0%;
+  height: 2px;
+  background: var(--text-accent);
+  transition: width 0.3s ease;
+}
+.site-nav a:hover {
+  color: var(--text-accent-hover);
+}
+.site-nav a:hover::after {
+  width: 100%;
 }
 
-.site-nav a {
-    color: #fff;
-    text-decoration: none;
-    font-size: 1rem;
+/* NAV TOGGLE (Hamburger Button) */
+.nav-toggle {
+  display: none;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: var(--space-sm);
+}
+.hamburger,
+.hamburger::before,
+.hamburger::after {
+  display: block;
+  background-color: var(--text-primary);
+  height: 3px;
+  width: 24px;
+  border-radius: 2px;
+  position: relative;
+  transition: all 0.3s ease;
+}
+.hamburger::before,
+.hamburger::after {
+  content: '';
+  position: absolute;
+  left: 0;
+}
+.hamburger::before {
+  top: -8px;
+}
+.hamburger::after {
+  bottom: -8px;
+}
+
+/* HAMBURGER TOGGLE TO X */
+.nav-toggle.open .hamburger {
+  background: transparent;
+}
+.nav-toggle.open .hamburger::before {
+  transform: rotate(45deg) translate(5px, 5px);
+}
+.nav-toggle.open .hamburger::after {
+  transform: rotate(-45deg) translate(5px, -5px);
+}
+
+/* ========== MOBILE RESPONSIVE ========== */
+@media (max-width: 768px) {
+  .nav-toggle {
+    display: block;
+  }
+
+  .site-nav {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    background: var(--bg-header);
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease;
+  }
+
+  .site-nav.open {
+    max-height: 300px;
+  }
+
+  .site-nav ul {
+    flex-direction: column;
+    padding: var(--space-md);
+    gap: var(--space-md);
+  }
+}
+
+/* Extra Small Screens: keep header row layout */
+@media (max-width: 500px) {
+  .site-header {
+    flex-direction: row;                /* stay in one line */
+    justify-content: space-between;    /* logo left, toggle right */
+    align-items: center;               /* vertical center */
+    padding: var(--space-sm) var(--space-md);
+  }
+
+  /* slightly shrink logo on very tiny screens */
+  .logo {
+    font-size: 1.2rem;
+  }
+  .logo-icon {
+    width: 36px;
+  }
+}
+
+
+/* Ensure desktop layout remains unaffected */
+@media (min-width: 769px) {
+  .site-nav {
+    display: block !important;
+    max-height: none !important;
+    position: static;
+    width: auto;
+    background: transparent;
+  }
+
+  .site-nav ul {
+    flex-direction: row;
+    padding: 0;
+  }
+
+  .nav-toggle {
+    display: none !important;
+  }
+}
+
+/* ========== FOOTER ========== */
+.site-footer {
+  background: var(--bg-header);
+  color: var(--text-primary);
+  padding: var(--space-md) var(--space-lg);
+}
+
+/* Container holds icons in one centered row */
+.footer-container {
+  display: flex;
+  justify-content: center;  /* center icons horizontally */
+  align-items: center;      /* center icons vertically */
+  gap: var(--space-lg);
+  flex-wrap: wrap;          /* wrap on very small screens */
+  text-align: center;
+}
+
+/* Social links row */
+.footer-social,
+.footer-contact {
+  display: flex;
+  gap: var(--space-md);
+}
+
+/* PNG icon styling */
+.footer-icon,
+.contact-icon {
+  width: 40px;
+  height: 40px;
+  object-fit: contain;
+  transition: transform 0.2s ease, opacity 0.2s ease;
+}
+
+/* Hover effect for all icons */
+.footer-social a:hover .footer-icon,
+.footer-contact .contact-link:hover .contact-icon {
+  transform: scale(1.1);
+  opacity: 0.85;
+}
+
+/* Copyright text */
+.footer-copy {
+  margin-top: var(--space-md);
+  font-size: 0.9rem;
+  color: var(--text-accent);
+  text-align: center;
+}
+
+/* Stack icons vertically on very narrow screens */
+@media (max-width: 500px) {
+  .footer-container {
+    flex-direction: column;
+    gap: var(--space-md);
+  }
 }
