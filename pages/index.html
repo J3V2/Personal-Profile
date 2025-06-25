@@ -44,32 +44,70 @@
       <!-- About Me -->
       <section id="about" class="about-section">
         <h2>About Me</h2>
-        <p>
-          I graduated with a Bachelor of Science in Computer Science from
-          Pamantasan ng Lungsod ng Maynila. Over the past 3 years, I’ve built
-          scalable web applications in ASP.NET, Django, and Node.js, and I love
-          collaborating on open-source projects, solving complex algorithms, and
-          learning new technologies.
-        </p>
-      </section>
+        <div class="underline"></div>
 
-      <!-- Skills -->
-      <section id="skills" class="skills-section">
-        <h2>Technical Skills</h2>
-        <ul class="skills-list">
-          <li>
-            <strong>Languages:</strong> C#, Python, JavaScript (ES6+),
-            TypeScript
-          </li>
-          <li>
-            <strong>Frameworks:</strong> ASP.NET Core, Django, React, Express
-          </li>
-          <li><strong>Databases:</strong> SQL Server, PostgreSQL, MongoDB</li>
-          <li>
-            <strong>Tools & DevOps:</strong> Git, Docker, Azure, AWS, CI/CD
-          </li>
-          <li><strong>Testing:</strong> xUnit, pytest, Jest</li>
-        </ul>
+        <div class="accordions">
+          <!-- Accordion 1: Brief Introduction -->
+          <div class="accordion">
+            <button class="accordion-header">
+              <span>Brief Introduction</span>
+              <svg class="accordion-icon" viewBox="0 0 24 24">
+                <path d="M12 15l-8-8h16z" fill="currentColor" />
+              </svg>
+            </button>
+            <div class="accordion-content">
+              <p>
+                I’m Jasfer S. Daniel, a Software Engineer who thrives on turning
+                complex problems into elegant, maintainable solutions. With a
+                B.S. in Computer Science and over 3 years of professional
+                experience, I’ve built web apps ranging from ASP.NET MVC to
+                React-powered SPAs.
+              </p>
+            </div>
+          </div>
+
+          <!-- Accordion 2: Soft Skills -->
+          <div class="accordion">
+            <button class="accordion-header">
+              <span>Soft Skills</span>
+              <svg class="accordion-icon" viewBox="0 0 24 24">
+                <path d="M12 15l-8-8h16z" fill="currentColor" />
+              </svg>
+            </button>
+            <div class="accordion-content">
+              <ul>
+                <li>🗣️ Communication & Collaboration</li>
+                <li>🧩 Problem Solving & Critical Thinking</li>
+                <li>⏰ Time Management & Prioritization</li>
+                <li>🤝 Team Leadership & Mentorship</li>
+              </ul>
+            </div>
+          </div>
+
+          <!-- Accordion 3: Technology Skills -->
+          <div class="accordion">
+            <button class="accordion-header">
+              <span>Technology Skills</span>
+              <svg class="accordion-icon" viewBox="0 0 24 24">
+                <path d="M12 15l-8-8h16z" fill="currentColor" />
+              </svg>
+            </button>
+            <div class="accordion-content">
+              <ul>
+                <li>
+                  <strong>Languages:</strong> C#, Python, JavaScript/TypeScript
+                </li>
+                <li>
+                  <strong>Frameworks:</strong> ASP.NET Core, Django, React
+                </li>
+                <li>
+                  <strong>Databases:</strong> SQL Server, PostgreSQL, MongoDB
+                </li>
+                <li><strong>DevOps:</strong> Git, Docker, Azure, AWS</li>
+              </ul>
+            </div>
+          </div>
+        </div>
       </section>
 
       <!-- Featured Projects -->

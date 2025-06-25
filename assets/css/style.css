@@ -380,3 +380,114 @@ body {
     font-size: 2rem;
   }
 }
+
+/* ========== ABOUT SECTION ACCORDIONS ========== */
+.about-section {
+  background: var(--color-page-bg);
+  padding: var(--space-lg) var(--space-md);
+  color: var(--text-primary);
+}
+
+.about-section h2 {
+  text-align: center;
+  font-size: 2rem;
+  color: var(--text-accent);
+  margin-bottom: var(--space-sm);
+}
+
+.about-section .underline {
+  width: 80px;
+  height: 4px;
+  background: var(--text-accent);
+  margin: 0 auto var(--space-lg);
+  border-radius: 2px;
+  animation: pulse 2s infinite ease-in-out;
+}
+
+.accordions {
+  max-width: 800px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-md);
+}
+
+/* Single accordion */
+.accordion {
+  border: 2px solid var(--text-accent);
+  border-radius: 8px;
+  overflow: hidden;
+  background: var(--color-header-bg);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.5);
+}
+
+/* Header */
+.accordion-header {
+  width: 100%;
+  background: var(--color-header-bg);
+  color: var(--text-primary);
+  padding: var(--space-md) var(--space-lg);
+  font-size: 1.25rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
+  border: none;
+  outline: none;
+  transition: background 0.3s ease;
+}
+.accordion-header:hover {
+  background: var(--color-accent-hover);
+}
+
+/* Arrow icon */
+.accordion-icon {
+  width: 24px;
+  height: 24px;
+  transition: transform 0.3s ease;
+  fill: var(--text-primary);
+}
+
+/* Content */
+.accordion-content {
+  max-height: 0;
+  overflow: hidden;
+  background: var(--color-page-bg);
+  transition: max-height 0.4s ease, padding 0.4s ease;
+}
+
+/* Open state */
+.accordion.open .accordion-content {
+  padding: var(--space-md) var(--space-lg);
+  max-height: 400px; /* adjust if you need more room */
+}
+.accordion.open .accordion-icon {
+  transform: rotate(180deg);
+}
+
+/* Content text */
+.accordion-content p,
+.accordion-content ul {
+  color: #e0c7ff;
+  line-height: 1.6;
+  font-size: 1.05rem;
+}
+.accordion-content ul {
+  list-style: none;
+  padding-left: 0;
+}
+.accordion-content li {
+  margin-bottom: var(--space-sm);
+}
+
+/* Pulse underline keyframes */
+@keyframes pulse {
+  0%,100% { transform: scaleX(1); opacity:1; }
+  50%     { transform: scaleX(1.4); opacity:0.6; }
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+  .about-section h2 { font-size: 1.75rem; }
+  .accordion-header { font-size: 1.1rem; }
+}
