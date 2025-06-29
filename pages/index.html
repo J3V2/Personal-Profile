@@ -41,6 +41,8 @@
         </div>
       </section>
 
+      <div class="section-separator"></div>
+
       <!-- About Me -->
       <section id="about" class="about-section">
         <h2>About Me</h2>
@@ -110,79 +112,169 @@
         </div>
       </section>
 
+      <div class="section-separator"></div>
+
       <!-- Featured Projects -->
       <section id="projects" class="projects-section">
         <h2>Featured Projects</h2>
-        <div class="project-cards">
-          <!-- Project 1 -->
-          <article class="project-card">
-            <h3>Movie Ticketing System</h3>
-            <p>
-              An ASP.NET MVC 5 web app that lets users browse and book movie
-              tickets, complete with role-based authentication, real-time seat
-              availability, and PDF downloads of tickets.
-            </p>
-            <a href="/pages/project.html#movie-ticketing" class="btn-secondary"
-              >Read More</a
-            >
-          </article>
-          <!-- Project 2 -->
-          <article class="project-card">
-            <h3>Student Management Portal</h3>
-            <p>
-              A Django-powered portal for schools: students can register, submit
-              assignments, and view grades. Includes custom form styling, file
-              uploads, and admin dashboard graphs.
-            </p>
-            <a href="/pages/project.html#student-portal" class="btn-secondary"
-              >Read More</a
-            >
-          </article>
+        <div class="underline"></div>
+
+        <div class="carousel">
+          <!-- Prev arrow -->
+          <button class="carousel-arrow prev-arrow" aria-label="Previous slide">
+            ‹
+          </button>
+
+          <div class="carousel-track">
+            <!-- Slide 1 -->
+            <div class="carousel-slide">
+              <img
+                src="/assets/images/gengar_evolution_by_hattori_hako_d7sh5kk.jpg"
+                alt="Project 1"
+              />
+              <h3 class="slide-title">Project One</h3>
+            </div>
+            <!-- Slide 2 -->
+            <div class="carousel-slide">
+              <img
+                src="/assets/images/pikachu_s_ghost_stories_by_mcgmark_detdlp2.jpg"
+                alt="Project 2"
+              />
+              <h3 class="slide-title">Project Two</h3>
+            </div>
+            <!-- Slide 3 -->
+            <div class="carousel-slide">
+              <img
+                src="/assets/images/pokemon-gengar-aesthetic-desktop-wallpaper-preview.jpg"
+                alt="Project 3"
+              />
+              <h3 class="slide-title">Project Three</h3>
+            </div>
+          </div>
+
+          <!-- Next arrow -->
+          <button class="carousel-arrow next-arrow" aria-label="Next slide">
+            ›
+          </button>
+
+          <!-- Navigation dots -->
+          <div class="carousel-nav">
+            <button class="nav-dot active" data-slide="0"></button>
+            <button class="nav-dot" data-slide="1"></button>
+            <button class="nav-dot" data-slide="2"></button>
+          </div>
         </div>
       </section>
 
-      <!-- Experience -->
+      <div class="section-separator"></div>
+
+      <!-- EXPERIENCE -->
       <section id="experience" class="experience-section">
         <h2>Experience</h2>
-        <ul class="experience-list">
-          <li>
-            <h4>Software Engineer, ABC Tech</h4>
-            <span class="date-range">Aug 2023 – Present</span>
-            <p>
-              Building and maintaining microservices in .NET Core, integrating
-              with Azure Functions, and improving CI/CD pipelines to reduce
-              deployment time by 40%.
-            </p>
-          </li>
-          <li>
-            <h4>Junior Developer, XYZ Solutions</h4>
-            <span class="date-range">Jun 2021 – Jul 2023</span>
-            <p>
-              Developed and styled front-end components in React, collaborated
-              on RESTful APIs, and optimized database queries to improve page
-              load performance by 25%.
-            </p>
-          </li>
-        </ul>
+        <div class="underline"></div>
+        <div class="exp-cards">
+          <div class="exp-card">
+            <h3>Software Engineer, ABC Tech</h3>
+            <span class="date-range">Aug 2023 – Present</span>
+            <ul>
+              <li>🕹️ Built microservices in .NET Core & Azure Functions</li>
+              <li>⚡ Improved CI/CD pipelines, cut deploy time by 40%</li>
+              <li>🔒 Enforced security best practices across services</li>
+            </ul>
+          </div>
+          <div class="exp-card">
+            <h3>Junior Developer, XYZ Solutions</h3>
+            <span class="date-range">Jun 2021 – Jul 2023</span>
+            <ul>
+              <li>⚙️ Developed React components and REST APIs</li>
+              <li>📈 Optimized SQL queries for 25% faster page loads</li>
+              <li>🤝 Collaborated cross‑functionally on Agile sprints</li>
+            </ul>
+          </div>
+        </div>
       </section>
 
-      <!-- Education -->
+      <div class="section-separator"></div>
+
+      <!-- EDUCATION -->
+      <div class="section-separator"></div>
+
       <section id="education" class="education-section">
         <h2>Education</h2>
-        <p>
-          <strong>XYZ University</strong> — B.S. Computer Science
-          <span class="date-range">2017 – 2021</span>
-        </p>
+        <div class="underline"></div>
+
+        <div class="edu-cards">
+          <!-- Junior High -->
+          <div class="edu-card">
+            <h3>Junior High School — ABC Middle School</h3>
+            <span class="date-range">2011 – 2014</span>
+            <p>General Academic Curriculum.</p>
+          </div>
+
+          <!-- Senior High -->
+          <div class="edu-card">
+            <h3>Senior High School — DEF High School</h3>
+            <span class="date-range">2014 – 2016</span>
+            <p>Science, Technology, Engineering & Mathematics (STEM) Strand.</p>
+          </div>
+
+          <!-- University -->
+          <div class="edu-card">
+            <h3>B.S. Computer Science — XYZ University</h3>
+            <span class="date-range">2017 – 2021</span>
+            <p>
+              Magna Cum Laude; Capstone: Scalable web‑based ticketing system.
+            </p>
+          </div>
+        </div>
       </section>
 
-      <!-- Contact / Call to Action -->
+      <div class="section-separator"></div>
+
+      <!-- CONTACT -->
       <section id="contact" class="contact-section">
-        <h2>Let’s Work Together</h2>
-        <p>
-          Have a project in mind or want to say hello? Feel free to reach out!
-        </p>
-        <a href="mailto:youremail@gmail.com" class="btn-primary">Email Me</a>
+        <h2>Get in Touch</h2>
+        <div class="underline"></div>
+        <div class="contact-grid">
+          <a
+            href="https://www.facebook.com/yourprofile"
+            target="_blank"
+            class="contact-card"
+            aria-label="Facebook"
+          >
+            <img
+              src="/assets/images/facebook-gradient.png"
+              alt="Facebook Icon"
+            />
+            <span>Facebook</span>
+          </a>
+          <a
+            href="https://github.com/yourusername"
+            target="_blank"
+            class="contact-card"
+          >
+            <img src="/assets/images/github-gradient.png" alt="GitHub Icon" />
+            <span>GitHub</span>
+          </a>
+          <a
+            href="https://www.linkedin.com/in/yourprofile"
+            target="_blank"
+            class="contact-card"
+          >
+            <img
+              src="/assets/images/linkedin-gradient.png"
+              alt="LinkedIn Icon"
+            />
+            <span>LinkedIn</span>
+          </a>
+          <a href="mailto:youremail@gmail.com" class="contact-card">
+            <img src="/assets/images/gmail-gradient.png" alt="Email Icon" />
+            <span>Email Me</span>
+          </a>
+        </div>
       </section>
+
+      <div class="section-separator"></div>
     </main>
     <!-- footer here -->
     <div data-include="/layout/footer.html"></div>
