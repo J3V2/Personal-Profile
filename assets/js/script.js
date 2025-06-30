@@ -1,3 +1,14 @@
+// SPLASH SCREEN HANDLER
+document.documentElement.classList.add('loading');
+window.addEventListener('load', () => {
+  // After window load + delay, remove loading class so rest shows
+  setTimeout(() => {
+    document.documentElement.classList.remove('loading');
+    const splash = document.getElementById('splash-screen');
+    if (splash) splash.style.display = 'none';
+  }, 3600); // allow CSS splashFade (0.6s) to finish
+});
+
 // ABOUT ACCORDION (multiple)
 document.addEventListener('DOMContentLoaded', () => {
   document.querySelectorAll('.accordion-header').forEach(header => {
