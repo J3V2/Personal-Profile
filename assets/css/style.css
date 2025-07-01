@@ -45,61 +45,42 @@ body {
   line-height: 1.5;
 }
 /* ========== SPLASH SCREEN ========== */
+/* SPLASH CONTAINER */
 #splash-screen {
-  position: fixed;
-  inset: 0;
+  position: fixed; inset: 0;
   background: radial-gradient(circle at center, #2e0259 0%, #000 80%);
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  display: flex; flex-direction: column;
+  align-items: center; justify-content: center;
   z-index: 2000;
-  overflow: hidden;
-  animation: splashFade 0.6s ease-in-out 1 forwards;
-  animation-delay: 3s; /* keep splash visible for 3s */
 }
 
-/* battle‑flash background */
+/* BATTLE‑FLASH PULSE */
 .battle-flash {
-  position: absolute;
-  inset: 0;
-  background: rgba(255, 0, 100, 0.2);
-  animation: flash 1s ease-in-out infinite alternate;
+  position: absolute; inset: 0;
+  background: rgba(255,0,100,0.15);
+  animation: flash 1.2s ease-in-out infinite alternate;
 }
 
-/* loader container */
-.gengar-loader {
-  position: relative;
-  width: 120px;
-  height: 120px;
+/* EVOLVER IMAGE */
+.evolver {
+  width: 300px; height: 300px;
+  margin-bottom: var(--space-lg);
 }
-.gengar-loader img {
-  width: 100%;
-  height: auto;
-  animation: shake 0.8s ease-in-out infinite;
+.evolver img {
+  width: 100%; height: auto;
 }
 
-/* fade splash out */
-@keyframes splashFade {
-  to { opacity: 0; visibility: hidden; }
-}
-
-/* red‑purple flash */
+/* KEYFRAMES */
 @keyframes flash {
-  from { background: rgba(255, 0, 100, 0.1); }
-  to   { background: rgba(200, 0, 150, 0.3); }
+  from { background: rgba(255,0,100,0.1); }
+  to   { background: rgba(200,0,150,0.25); }
 }
 
-/* chibi shake (battle excitement) */
-@keyframes shake {
-  0%,100% { transform: translateX(0) rotate(0deg); }
-  25%     { transform: translateX(-5px) rotate(-5deg); }
-  75%     { transform: translateX(5px)  rotate(5deg); }
-}
-
-/* ensure rest of page hidden under */
+/* PAGE HIDDEN UNDER SPLASH */
 body.loading *:not(#splash-screen) {
   visibility: hidden;
 }
+
 section {
   background: var(--section-bg);
   padding: var(--space-lg) var(--space-md);
@@ -437,39 +418,43 @@ section {
   border-radius: 2px;
   animation: pulse 2s infinite ease-in-out;
 }
+
 .carousel {
   position: relative;
   max-width: 800px;
   margin: 0 auto;
   overflow: hidden;
 }
-/* Carousel Arrows */
+
+/* Simple text arrows, vertically centered */
 .carousel-arrow {
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  background: var(--color-header-bg);
-  color: var(--text-primary);
-  border: 2px solid var(--text-accent);
-  border-radius: 50%;
-  width: 36px;
-  height: 36px;
-  font-size: 1.5rem;
-  line-height: 1;
+  position: absolute;       /* position relative to .carousel */
+  top: 50%;                 /* halfway down */
+  transform: translateY(-50%); /* pull up by half its own height */
+  background: none;
+  border: none;
+  border-radius: 0;
+  color: var(--text-accent);
+  font-size: 10rem;
+  padding: var(--space-sm) var(--space-md);
   cursor: pointer;
-  transition: background 0.2s, transform 0.2s;
+  transition: color 0.2s, transform 0.2s;
   z-index: 10;
 }
-.carousel-arrow:hover {
-  background: var(--text-accent-hover);
-  transform: translateY(-50%) scale(1.1);
-}
+
 .prev-arrow {
-  left: 10px;
+  left: 5px;  
 }
+
 .next-arrow {
-  right: 10px;
+  right: 5px; 
 }
+
+.carousel-arrow:hover {
+  color: var(--text-hover);
+  transform: translateY(-50%) scale(1.1); /* maintain vertical centering */
+}
+
 .carousel-track {
   display: flex;
   transition: transform 0.6s ease-in-out;

@@ -1,12 +1,32 @@
-// SPLASH SCREEN HANDLER
+// SPLASH: Evolution cycle then auto-hide
 document.documentElement.classList.add('loading');
+
 window.addEventListener('load', () => {
-  // After window load + delay, remove loading class so rest shows
-  setTimeout(() => {
-    document.documentElement.classList.remove('loading');
-    const splash = document.getElementById('splash-screen');
-    if (splash) splash.style.display = 'none';
-  }, 3600); // allow CSS splashFade (0.6s) to finish
+  const images = [
+    '/assets/images/gastly-pixel.png',
+    '/assets/images/haunter-pixel.png',
+    '/assets/images/gengar-pixel.png',
+    '/assets/images/mega gengar-pixel.png'
+  ];
+  const evolveImg = document.getElementById('evolve-img');
+  let idx = 0;
+
+  const evoInterval = setInterval(() => {
+    idx++;
+    if (idx < images.length) {
+      evolveImg.src = images[idx];
+    } else {
+      clearInterval(evoInterval);
+      // after a short pause, fade out the splash
+      setTimeout(() => {
+        document.documentElement.classList.remove('loading');
+        const splash = document.getElementById('splash-screen');
+        splash.style.transition = 'opacity 0.6s ease';
+        splash.style.opacity = 0;
+        setTimeout(() => splash.remove(), 600);
+      }, 500);
+    }
+  }, 1000);
 });
 
 // ABOUT ACCORDION (multiple)
