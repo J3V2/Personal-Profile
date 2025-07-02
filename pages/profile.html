@@ -71,6 +71,39 @@
       <section class="skills-section">
         <h2>Skills</h2>
         <div class="underline"></div>
+
+        <div class="skills-legend-dropdown">
+          <button
+            class="legend-toggle"
+            aria-haspopup="true"
+            aria-expanded="false"
+          >
+            Pokéball Levels ▼
+          </button>
+          <div class="legend-menu" role="menu">
+            <div class="legend-item" role="menuitem">
+              <img src="/assets/images/balls/Poke_Ball.png" alt="Level 1" />
+              <span>Level 1</span>
+            </div>
+            <div class="legend-item" role="menuitem">
+              <img src="/assets/images/balls/Great_Ball.png" alt="Level 2" />
+              <span>Level 2</span>
+            </div>
+            <div class="legend-item" role="menuitem">
+              <img src="/assets/images/balls/Ultra_Ball.png" alt="Level 3" />
+              <span>Level 3</span>
+            </div>
+            <div class="legend-item" role="menuitem">
+              <img src="/assets/images/balls/Safari_Ball.png" alt="Level 4" />
+              <span>Level 4</span>
+            </div>
+            <div class="legend-item" role="menuitem">
+              <img src="/assets/images/balls/Master_Ball.png" alt="Level 5" />
+              <span>Level 5</span>
+            </div>
+          </div>
+        </div>
+
         <div class="skills-category">
           <h3>Soft Skills</h3>
           <div class="skills-scroll">
@@ -136,46 +169,129 @@
 
       <div class="section-separator"></div>
 
-      <!-- HOBBIES -->
-      <section id="hobbies" class="skills-section">
+      <section id="hobbies-interest" class="hobbies-section">
         <h2>Hobbies & Interests</h2>
         <div class="underline"></div>
-        <ul class="skills-list">
-          <li>🎮 Retro & Modern Gaming</li>
-          <li>📚 Reading Sci‑fi & Fantasy</li>
-          <li>🎨 Digital Art & Pixel Design</li>
-          <li>🚴 Cycling & Outdoor Adventures</li>
-          <li>📝 Blogging about Tech & Travel</li>
-        </ul>
+
+        <div class="hobbies-interests">
+          <!-- Hobbies Card -->
+          <div class="pokedex-card">
+            <h3>Hobbies</h3>
+            <ul>
+              <li>
+                <img
+                  src="/assets/images/other-icons/game-gradient.png"
+                  alt="Gaming Icon"
+                />
+                Gaming (Online & Offline).
+              </li>
+              <li>
+                <img
+                  src="/assets/images/other-icons/anime-gradient.png"
+                  alt="Anime Icon"
+                />
+                Reading Manga, Manhua, & Webtoon also Watching.
+              </li>
+              <li>
+                <img
+                  src="/assets/images/other-icons/music-gradient.png"
+                  alt="Music Icon"
+                />
+                Listening to Musics
+              </li>
+              <li>
+                <img
+                  src="/assets/images/other-icons/soccer_ball-gradient.png"
+                  alt="Soccer Ball Icon"
+                />
+                Soccer
+              </li>
+              <li>
+                <img
+                  src="/assets/images/other-icons/youtube-gradient.png"
+                  alt="Youtube Icon"
+                />
+                Watching Random Youtube Videos
+              </li>
+            </ul>
+          </div>
+
+          <!-- Interests Card -->
+          <div class="pokedex-card">
+            <h3>Interests</h3>
+            <ul>
+              <li>
+                <img
+                  src="/assets/images/other-icons/program-gradient.png"
+                  alt="Program Icon"
+                />
+                Programming
+              </li>
+              <li>
+                <img
+                  src="/assets/images/other-icons/pokemon-gradient.png"
+                  alt="PokemonGO Icon"
+                />
+                Pokémon Games
+              </li>
+              <li>
+                <img
+                  src="/assets/images/other-icons/tech-gradient.png"
+                  alt="Technology Icon"
+                />
+                New Technologies
+              </li>
+              <li>
+                <img
+                  src="/assets/images/other-icons/artist-gradient.png"
+                  alt="Artist Icon"
+                />
+                Arts
+              </li>
+              <li>
+                <img
+                  src="/assets/images/other-icons/puzzle-gradient.png"
+                  alt="Puzzle Icon"
+                />
+                Brain Teasers & Puzzles
+              </li>
+              <li>
+                <img
+                  src="/assets/images/other-icons/book-gradient.png"
+                  alt="Book Icon"
+                />
+                Books and Novels
+              </li>
+            </ul>
+          </div>
+        </div>
       </section>
 
       <div class="section-separator"></div>
 
       <!-- EXPERIENCE -->
-      <section id="experience" class="experience-section">
+      <section id="experience" class="experience-battle">
         <h2>Experience</h2>
         <div class="underline"></div>
-        <div class="exp-cards">
-          <div class="exp-card">
-            <h3>Software Engineer, ABC Tech</h3>
-            <span class="date-range">Aug 2023 – Present</span>
+
+        <!-- Battle background -->
+        <div class="battle-field"></div>
+
+        <div class="exp-moves">
+          <div class="exp-card move" style="animation-delay: 0.5s">
+            <div class="move-header">
+              Commission on Filipinos Overseas (CFO)
+            </div>
+            <div class="move-typing">“Software Engineer Intern”</div>
+            <div class="move-hp">
+              <div class="hp-fill" style="width: 80%"></div>
+            </div>
             <ul>
+              <li>ASP.NET MVC Pattern & Database Management</li>
               <li>
-                Designed microservices architecture using .NET Core & Azure.
+                Debug any errors in the codebase and improve code structure
               </li>
-              <li>Built CI/CD pipelines, reducing deploy times by 40%.</li>
-              <li>Mentored junior developers and led code reviews.</li>
-            </ul>
-          </div>
-          <div class="exp-card">
-            <h3>Junior Developer, XYZ Solutions</h3>
-            <span class="date-range">Jun 2021 – Jul 2023</span>
-            <ul>
-              <li>Developed React components & integrated RESTful APIs.</li>
-              <li>Optimized database queries for 25% faster page loads.</li>
-              <li>
-                Collaborated in Agile sprints with cross‑functional teams.
-              </li>
+              <li>Using Bootstrap for the Front-End</li>
             </ul>
           </div>
         </div>

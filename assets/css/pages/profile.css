@@ -223,3 +223,270 @@
     margin-top: var(--space-sm);
   }
 }
+
+/* ===== Legend Dropdown ===== */
+.skills-legend-dropdown {
+  position: absolute;
+  top: var(--space-md);
+  right: var(--space-md);
+  z-index: 20;
+  font-family: monospace;
+}
+
+/* Toggle button */
+.legend-toggle {
+  background: var(--color-header-bg);
+  border: 3px solid var(--text-accent);
+  border-radius: 4px;
+  padding: var(--space-sm) var(--space-md);
+  color: var(--text-primary);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: var(--space-sm);
+  box-shadow: inset 0 0 0 2px rgba(0,0,0,0.5);
+  transition: background 0.2s, transform 0.2s;
+}
+.legend-toggle:hover {
+  background: var(--text-accent);
+  color: var(--color-header-bg);
+  transform: scale(1.05);
+}
+
+/* Hidden by default */
+.legend-menu {
+  max-height: 0;
+  overflow: hidden;
+  background: var(--color-header-bg);
+  border: 3px solid var(--text-accent);
+  border-top: none;
+  border-radius: 0 0 4px 4px;
+  box-shadow: inset 0 0 0 2px rgba(0,0,0,0.5), 0 4px 8px rgba(0,0,0,0.4);
+  transition: max-height 0.3s ease;
+}
+
+/* When open */
+.skills-legend-dropdown.open .legend-menu {
+  max-height: 300px; /* enough for 5 items */
+}
+
+/* Legend items */
+.legend-item {
+  display: flex;
+  align-items: center;
+  gap: var(--space-sm);
+  padding: var(--space-sm) var(--space-md);
+  cursor: default;
+}
+.legend-item + .legend-item {
+  border-top: 1px solid rgba(255,255,255,0.1);
+}
+.legend-item img {
+  width: 20px;
+  height: 20px;
+  object-fit: contain;
+}
+
+/* Responsive: hide dropdown on very small devices */
+@media (max-width: 500px) {
+  .skills-legend-dropdown {
+    display: none;
+  }
+}
+
+/* ===== HOBBIES & INTERESTS SECTION ===== */
+.hobbies-section {
+  position: relative;
+  padding: var(--space-lg) var(--space-md);
+  background: var(--section-bg);
+  text-align: center;
+}
+.hobbies-section h2 {
+  font-size: 2rem;
+  color: var(--text-accent);
+  animation: flicker 3s linear infinite;
+}
+.hobbies-interests {
+  display: flex;
+  gap: var(--space-lg);
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-top: var(--space-md);
+}
+
+/* POKEDEX‑STYLE CARD */
+.pokedex-card {
+  position: relative;
+  background: var(--color-header-bg);
+  border: 4px solid var(--text-accent);
+  border-radius: 8px;
+  padding: var(--space-md);
+  width: 300px;
+  box-shadow: inset 0 0 0 2px rgba(0,0,0,0.5), 0 4px 12px rgba(0,0,0,0.4);
+  text-align: left;
+}
+
+/* Pixel corners */
+.pokedex-card::before,
+.pokedex-card::after {
+  content: "";
+  position: absolute;
+  width: 12px; height: 12px;
+  background: var(--text-accent);
+}
+.pokedex-card::before {
+  top: -4px; left: -4px;
+}
+.pokedex-card::after {
+  bottom: -4px; right: -4px;
+}
+
+.pokedex-card h3 {
+  font-family: monospace;
+  font-size: 1.25rem;
+  color: var(--text-primary);
+  margin-bottom: var(--space-sm);
+  text-shadow: 1px 1px 2px #000;
+}
+
+/* List styling */
+.pokedex-card ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.pokedex-card li {
+  display: flex;
+  align-items: center;
+  gap: var(--space-sm);
+  margin-bottom: var(--space-sm);
+  font-size: 0.95rem;
+  color: var(--text-primary);
+}
+.pokedex-card li img {
+  width: 24px;
+  height: 24px;
+}
+
+/* Responsive: stack cards on small screens */
+@media (max-width: 700px) {
+  .hobbies-interests {
+    flex-direction: column;
+    align-items: center;
+  }
+}
+/* ========== EXPERIENCE: BATTLE STYLE ========== */
+.experience-battle {
+  position: relative;
+  padding: var(--space-lg) var(--space-md);
+  text-align: center;
+  overflow: hidden;
+}
+.experience-battle h2 {
+  font-size: 2rem;
+  color: var(--text-accent);
+  animation: flicker 3s linear infinite;
+}
+.experience-battle .underline {
+  margin-bottom: var(--space-lg);
+}
+
+/* battle-field background */
+.battle-field {
+  position: absolute;
+  inset: 0;
+  background: url('/assets/images/background/pokemon_battle_bg.jpg') center/cover no-repeat;
+  opacity: 0.2;
+  pointer-events: none;
+}
+
+/* move cards container */
+.exp-moves {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: var(--space-lg);
+}
+
+/* individual move card */
+.exp-card {
+  position: relative;
+  background: var(--color-header-bg);
+  border: 3px solid var(--text-accent);
+  border-radius: 8px;
+  width: 500px;
+  padding: var(--space-md);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.6);
+  opacity: 0;
+  transform: translateY(20px);
+  animation: moveIn 0.6s forwards ease-out;
+}
+
+/* header with typing effect */
+.move-header {
+  font-family: monospace;
+  font-size: 1.1rem;
+  color: var(--text-primary);
+  margin-bottom: var(--space-sm);
+  overflow: hidden;
+  white-space: nowrap;
+  border-right: 2px solid var(--text-primary);
+  width: 0;
+  animation: typing 1.5s steps(30) forwards, blink 0.75s step-end infinite;
+}
+
+/* battle‐style “attack name” text */
+.move-typing {
+  font-style: italic;
+  color: var(--text-hover);
+  margin-bottom: var(--space-md);
+  animation: fadeIn 1s 1.5s forwards;
+  opacity: 0;
+}
+
+/* HP bar */
+.move-hp {
+  background: rgba(255,255,255,0.2);
+  border: 1px solid var(--text-accent);
+  border-radius: 4px;
+  height: 8px;
+  margin-bottom: var(--space-md);
+  overflow: hidden;
+}
+
+.hp-fill {
+  background: var(--text-accent);
+  height: 100%;
+  width: 0;                         
+  transition: width 1s ease-out;   
+}
+
+/* list styling */
+.exp-card ul {
+  list-style: none;
+  color: #e0c7ff;
+  text-align: left;
+  padding-left: 1rem;
+}
+.exp-card li {
+  margin-bottom: var(--space-sm);
+}
+
+/* ========== KEYFRAMES ========== */
+@keyframes moveIn {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes typing {
+  to { width: 100%; }
+}
+@keyframes blink {
+  50% { border-color: transparent; }
+}
+
+@keyframes fadeIn {
+  to { opacity: 1; }
+}

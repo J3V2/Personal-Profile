@@ -42,3 +42,22 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   });
 });
+
+// Legend dropdown toggle
+document.addEventListener('DOMContentLoaded', () => {
+  const dropdown = document.querySelector('.skills-legend-dropdown');
+  const toggle   = dropdown.querySelector('.legend-toggle');
+
+  toggle.addEventListener('click', () => {
+    const isOpen = dropdown.classList.toggle('open');
+    toggle.setAttribute('aria-expanded', isOpen);
+  });
+
+  // Close if clicking outside
+  document.addEventListener('click', e => {
+    if (!dropdown.contains(e.target) && dropdown.classList.contains('open')) {
+      dropdown.classList.remove('open');
+      toggle.setAttribute('aria-expanded', 'false');
+    }
+  });
+});
