@@ -375,10 +375,12 @@
     align-items: center;
   }
 }
-/* ========== EXPERIENCE: BATTLE STYLE ========== */
+/* ===== EXPERIENCE SECTION ===== */
+/* ===== EXPERIENCE: BATTLE STYLE ===== */
 .experience-battle {
   position: relative;
   padding: var(--space-lg) var(--space-md);
+  background: var(--section-bg);
   text-align: center;
   overflow: hidden;
 }
@@ -391,16 +393,7 @@
   margin-bottom: var(--space-lg);
 }
 
-/* battle-field background */
-.battle-field {
-  position: absolute;
-  inset: 0;
-  background: url('/assets/images/background/pokemon_battle_bg.jpg') center/cover no-repeat;
-  opacity: 0.2;
-  pointer-events: none;
-}
-
-/* move cards container */
+/* Container of animated cards */
 .exp-moves {
   display: flex;
   flex-wrap: wrap;
@@ -408,13 +401,18 @@
   gap: var(--space-lg);
 }
 
-/* individual move card */
+/* EXP-CARD retains battle “move” animations */
 .exp-card {
   position: relative;
-  background: var(--color-header-bg);
+  background: linear-gradient(
+    to bottom,
+    var(--color-header-bg) 0%,
+    var(--color-footer-bg) 100%
+  );
   border: 3px solid var(--text-accent);
   border-radius: 8px;
-  width: 500px;
+  width: 600px;                /* wider card */
+  max-width: 90vw;
   padding: var(--space-md);
   box-shadow: 0 4px 12px rgba(0,0,0,0.6);
   opacity: 0;
@@ -422,20 +420,33 @@
   animation: moveIn 0.6s forwards ease-out;
 }
 
-/* header with typing effect */
+/* Header with typing + date */
 .move-header {
-  font-family: monospace;
-  font-size: 1.1rem;
-  color: var(--text-primary);
-  margin-bottom: var(--space-sm);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
   overflow: hidden;
   white-space: nowrap;
   border-right: 2px solid var(--text-primary);
   width: 0;
   animation: typing 1.5s steps(30) forwards, blink 0.75s step-end infinite;
+  margin-bottom: var(--space-sm);
+}
+.job-title {
+  font-family: monospace;
+  font-size: 1.1rem;
+  color: var(--text-primary);
+}
+.date-range {
+  font-family: monospace;
+  font-size: 0.9rem;
+  color: var(--text-hover);
+  font-style: italic;
+  margin-left: var(--space-sm);
+  border: none;                /* no extra border on date */
 }
 
-/* battle‐style “attack name” text */
+/* Attack text */
 .move-typing {
   font-style: italic;
   color: var(--text-hover);
@@ -453,20 +464,19 @@
   margin-bottom: var(--space-md);
   overflow: hidden;
 }
-
 .hp-fill {
   background: var(--text-accent);
   height: 100%;
-  width: 0;                         
-  transition: width 1s ease-out;   
+  width: 0;
+  transition: width 1s ease-out;
 }
 
-/* list styling */
+/* List styling */
 .exp-card ul {
   list-style: none;
-  color: #e0c7ff;
   text-align: left;
   padding-left: 1rem;
+  color: #e0c7ff;
 }
 .exp-card li {
   margin-bottom: var(--space-sm);
@@ -479,14 +489,156 @@
     transform: translateY(0);
   }
 }
-
 @keyframes typing {
   to { width: 100%; }
 }
 @keyframes blink {
   50% { border-color: transparent; }
 }
-
 @keyframes fadeIn {
   to { opacity: 1; }
 }
+
+/* Responsive */
+@media (max-width: 768px) {
+  .exp-card {
+    width: 100%;
+    padding: var(--space-md) var(--space-sm);
+  }
+}
+
+/* ===== EDUCATION TIMELINE ===== */
+.education-section {
+  position: relative;
+  padding: var(--space-lg) var(--space-md);
+  background: var(--section-bg);
+  text-align: center;
+}
+.education-section h2 {
+  font-size: 2rem;
+  color: var(--text-accent);
+  animation: flicker 3s linear infinite;
+}
+.edu-timeline {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  max-width: 900px;
+  margin: var(--space-lg) auto 0;
+  padding-bottom: 80px; /* space for avatar */
+}
+
+/* Timeline line */
+.edu-timeline::before {
+  content: '';
+  position: absolute;
+  left: 5%;
+  right: 5%;
+  top: 40px;
+  height: 4px;
+  background: var(--text-accent);
+  z-index: 1;
+  border-radius: 2px;
+}
+
+/* Each education card */
+.edu-item {
+  position: relative;
+  background: var(--color-header-bg);
+  border: 3px solid var(--text-accent);
+  border-radius: 8px;
+  width: 28%;
+  padding: var(--space-md);
+  box-shadow: inset 0 0 0 2px rgba(0,0,0,0.5),
+              0 4px 12px rgba(0,0,0,0.4);
+  text-align: left;
+  z-index: 2;
+  transition: transform 0.3s;
+}
+.edu-item:hover {
+  transform: translateY(-8px);
+}
+.edu-item .year {
+  font-family: monospace;
+  color: var(--text-hover);
+  margin-bottom: var(--space-sm);
+}
+.edu-item .school {
+  font-weight: 600;
+  color: var(--text-primary);
+  margin-bottom: var(--space-sm);
+}
+.edu-item ul {
+  list-style: none;
+  padding-left: 1rem;
+  color: #e0c7ff;
+}
+.edu-item li {
+  margin-bottom: var(--space-sm);
+  position: relative;
+}
+.edu-item li::before {
+  content: '•';
+  position: absolute;
+  left: 0;
+  color: var(--text-accent);
+}
+
+/* Avatar */
+.edu-avatar {
+  position: absolute;
+  bottom: 0;
+  left: 5%;
+  width: 60px;
+  height: 60px;
+  transform: translateX(-50%);
+  transition: transform 0.5s ease;
+  z-index: 3;
+}
+.edu-avatar img {
+  width: 100%;
+  height: auto;
+}
+
+/* Move avatar on hover */
+.edu-item[data-step="1"]:hover ~ .edu-avatar {
+  transform: translate(calc( (100% - 10%) * 0 / 2 + 5% ), 0);
+}
+.edu-item[data-step="2"]:hover ~ .edu-avatar {
+  transform: translate(calc( (100% - 10%) * 1 / 2 + 5% ), 0);
+}
+.edu-item[data-step="3"]:hover ~ .edu-avatar {
+  transform: translate(calc( (100% - 10%) * 2 / 2 + 5% ), 0);
+}
+
+/* Keep avatar at last hover position */
+.edu-timeline:hover ~ .edu-avatar { pointer-events: none; }
+
+/* Responsive */
+@media (max-width: 768px) {
+  .edu-timeline {
+    flex-direction: column;
+    align-items: center;
+    padding-bottom: 120px;
+  }
+  .edu-timeline::before { display: none; }
+  .edu-item {
+    width: 80%;
+    margin-bottom: var(--space-lg);
+  }
+  .edu-avatar {
+    left: 50%;
+  }
+  /* vertical hover positions */
+  .edu-item[data-step="1"]:hover ~ .edu-avatar {
+    transform: translate(-50%, 0);
+  }
+  .edu-item[data-step="2"]:hover ~ .edu-avatar {
+    transform: translate(-50%, 0);
+  }
+  .edu-item[data-step="3"]:hover ~ .edu-avatar {
+    transform: translate(-50%, 0);
+  }
+}
+

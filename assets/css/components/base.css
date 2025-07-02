@@ -34,3 +34,29 @@ body {
     0 2px 4px rgba(0,0,0,0.5),
     inset 0 0 8px rgba(200,162,200,0.6);
 }
+
+/* ===== POKEDEX BORDER UTILITY ===== */
+.pokedex-border {
+  position: relative;                  /* for corner blocks */
+  border: 4px solid var(--text-accent);
+  border-radius: 8px;
+  box-shadow: inset 0 0 0 2px rgba(0,0,0,0.5);
+}
+
+/* Pixel‑style corner blocks */
+.pokedex-border::before,
+.pokedex-border::after {
+  content: "";
+  position: absolute;
+  width: 12px;
+  height: 12px;
+  background: var(--text-accent);
+}
+.pokedex-border::before {
+  top: -4px;
+  left: -4px;
+}
+.pokedex-border::after {
+  bottom: -4px;
+  right: -4px;
+}

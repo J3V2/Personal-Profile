@@ -16,9 +16,10 @@
     <div data-include="/layout/header.html"></div>
 
     <main>
+      <div class="section-separator"></div>
       <!-- PROFILE -->
-      <section id="profile-hero" class="profile-hero">
-        <div class="img-compare">
+      <section id="profile-hero" class="profile-hero pokedex-border">
+        <div class="img-compare pokedex-border">
           <img
             src="/assets/images/DANIEL JASFER-PLM-TOGA-0037.JPG"
             alt="Portrait Base"
@@ -32,7 +33,7 @@
           <div class="slider-handle"></div>
         </div>
 
-        <div class="hero-content">
+        <div class="hero-content pokedex-border">
           <h1>Jasfer S. Daniel</h1>
           <p>
             Aspiring Software Engineer with a knack for full‑stack web
@@ -44,7 +45,7 @@
           </p>
         </div>
 
-        <div class="evolution-row">
+        <div class="evolution-row pokedex-border">
           <div class="evolution-image" data-name="Gastly">
             <img src="/assets/images/gastly-pixel.png" alt="Gastly" />
           </div>
@@ -68,7 +69,7 @@
 
       <div class="section-separator"></div>
 
-      <section class="skills-section">
+      <section class="skills-section pokedex-border">
         <h2>Skills</h2>
         <div class="underline"></div>
 
@@ -78,33 +79,33 @@
             aria-haspopup="true"
             aria-expanded="false"
           >
-            Pokéball Levels ▼
+            Pokéball Levels ▼
           </button>
           <div class="legend-menu" role="menu">
             <div class="legend-item" role="menuitem">
-              <img src="/assets/images/balls/Poke_Ball.png" alt="Level 1" />
-              <span>Level 1</span>
+              <img src="/assets/images/balls/Poke_Ball.png" alt="Level 1" />
+              <span>Level 1</span>
             </div>
             <div class="legend-item" role="menuitem">
-              <img src="/assets/images/balls/Great_Ball.png" alt="Level 2" />
-              <span>Level 2</span>
+              <img src="/assets/images/balls/Great_Ball.png" alt="Level 2" />
+              <span>Level 2</span>
             </div>
             <div class="legend-item" role="menuitem">
-              <img src="/assets/images/balls/Ultra_Ball.png" alt="Level 3" />
-              <span>Level 3</span>
+              <img src="/assets/images/balls/Ultra_Ball.png" alt="Level3" />
+              <span>Level 3</span>
             </div>
             <div class="legend-item" role="menuitem">
-              <img src="/assets/images/balls/Safari_Ball.png" alt="Level 4" />
-              <span>Level 4</span>
+              <img src="/assets/images/balls/Safari_Ball.png" alt="Level 4" />
+              <span>Level 4</span>
             </div>
             <div class="legend-item" role="menuitem">
-              <img src="/assets/images/balls/Master_Ball.png" alt="Level 5" />
-              <span>Level 5</span>
+              <img src="/assets/images/balls/Master_Ball.png" alt="Level 5" />
+              <span>Level 5</span>
             </div>
           </div>
         </div>
 
-        <div class="skills-category">
+        <div class="skills-category pokedex-border">
           <h3>Soft Skills</h3>
           <div class="skills-scroll">
             <div class="skill" data-score="4">
@@ -131,7 +132,7 @@
         </div>
 
         <div class="skills-grid">
-          <div class="skills-category">
+          <div class="skills-category pokedex-border">
             <h3>Technical Skills</h3>
             <div class="skills-scroll">
               <div class="skill" data-score="4">
@@ -169,7 +170,7 @@
 
       <div class="section-separator"></div>
 
-      <section id="hobbies-interest" class="hobbies-section">
+      <section id="hobbies-interest" class="hobbies-section pokedex-border">
         <h2>Hobbies & Interests</h2>
         <div class="underline"></div>
 
@@ -270,28 +271,32 @@
       <div class="section-separator"></div>
 
       <!-- EXPERIENCE -->
-      <section id="experience" class="experience-battle">
+      <section id="experience" class="experience-battle pokedex-border">
         <h2>Experience</h2>
         <div class="underline"></div>
 
-        <!-- Battle background -->
-        <div class="battle-field"></div>
-
         <div class="exp-moves">
-          <div class="exp-card move" style="animation-delay: 0.5s">
+          <div
+            class="exp-card move pokedex-border"
+            style="animation-delay: 0.5s"
+          >
             <div class="move-header">
-              Commission on Filipinos Overseas (CFO)
+              <span class="job-title">Software Engineer Intern</span>
+              <span class="date-range">July 2024 - August 2024</span>
             </div>
-            <div class="move-typing">“Software Engineer Intern”</div>
+            <div class="move-typing">
+              “Commission on Filipinos Overseas (CFO)”
+            </div>
             <div class="move-hp">
               <div class="hp-fill" style="width: 80%"></div>
             </div>
             <ul>
-              <li>ASP.NET MVC Pattern & Database Management</li>
+              <li>ASP.NET MVC Pattern & Database Management.</li>
               <li>
-                Debug any errors in the codebase and improve code structure
+                Debug any errors in the codebase and improve code structure.
               </li>
-              <li>Using Bootstrap for the Front-End</li>
+              <li>Using Bootstrap for the Front-End.</li>
+              <li>Movie Ticketing Applications.</li>
             </ul>
           </div>
         </div>
@@ -300,74 +305,47 @@
       <div class="section-separator"></div>
 
       <!-- EDUCATION -->
-      <section id="education" class="education-section">
+      <section id="education" class="education-section pokedex-border">
         <h2>Education</h2>
         <div class="underline"></div>
-        <div class="edu-cards">
-          <div class="edu-card">
-            <h3>Junior High School — ABC Middle School</h3>
-            <span class="date-range">2011 – 2014</span>
-            <p>General Academic Curriculum.</p>
+
+        <div class="edu-timeline">
+          <div class="edu-item pokedex-border" data-step="1">
+            <div class="year">2011 – 2014</div>
+            <div class="school">Junior High School</div>
+            <ul>
+              <li>General Academic Curriculum</li>
+              <li>Math Olympiad Silver Medal</li>
+            </ul>
           </div>
-          <div class="edu-card">
-            <h3>Senior High School — DEF High School</h3>
-            <span class="date-range">2014 – 2016</span>
-            <p>STEM Strand: Science, Technology, Engineering & Mathematics.</p>
+          <div class="edu-item pokedex-border" data-step="2">
+            <div class="year">2014 – 2016</div>
+            <div class="school">Senior High School (STEM)</div>
+            <ul>
+              <li>Graduated with Honors</li>
+              <li>Science Fair Winner</li>
+            </ul>
           </div>
-          <div class="edu-card">
-            <h3>B.S. Computer Science — XYZ University</h3>
-            <span class="date-range">2017 – 2021</span>
-            <p>
-              Magna Cum Laude; Capstone: Scalable Web‑based Ticketing System.
-            </p>
+          <div class="edu-item pokedex-border" data-step="3">
+            <div class="year">2017 – 2021</div>
+            <div class="school">B.S. Computer Science</div>
+            <ul>
+              <li>Magna Cum Laude</li>
+              <li>Capstone: Scalable Web Ticketing</li>
+            </ul>
+          </div>
+
+          <!-- Avatar -->
+          <div class="edu-avatar">
+            <img
+              src="/assets/images/avatars/Avatar - Gengar.png"
+              alt="Gengar"
+            />
           </div>
         </div>
       </section>
 
       <div class="section-separator"></div>
-
-      <!-- CONTACT (quick links) -->
-      <section id="contact" class="contact-section">
-        <h2>Connect with Me</h2>
-        <div class="underline"></div>
-        <div class="contact-grid">
-          <a
-            href="mailto:youremail@gmail.com"
-            class="contact-card"
-            aria-label="Email"
-          >
-            <img src="/assets/images/gmail-gradient.png" alt="Email" />
-            <span>Email</span>
-          </a>
-          <a
-            href="https://github.com/yourusername"
-            target="_blank"
-            class="contact-card"
-            aria-label="GitHub"
-          >
-            <img src="/assets/images/github-gradient.png" alt="GitHub" />
-            <span>GitHub</span>
-          </a>
-          <a
-            href="https://www.linkedin.com/in/yourprofile"
-            target="_blank"
-            class="contact-card"
-            aria-label="LinkedIn"
-          >
-            <img src="/assets/images/linkedin-gradient.png" alt="LinkedIn" />
-            <span>LinkedIn</span>
-          </a>
-          <a
-            href="https://www.facebook.com/yourprofile"
-            target="_blank"
-            class="contact-card"
-            aria-label="Facebook"
-          >
-            <img src="/assets/images/facebook-gradient.png" alt="Facebook" />
-            <span>Facebook</span>
-          </a>
-        </div>
-      </section>
     </main>
 
     <!-- FOOTER -->
