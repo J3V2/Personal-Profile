@@ -1,0 +1,28 @@
+/* ========== THEME VARIABLES ========== */
+:root {
+  /* Gradient stops */
+  --grad-start: #1A0F24;
+  --grad-middle: #3B2847;
+  --grad-end: #241836;
+
+  /* Section overlay */
+  --section-bg: rgba(30, 10, 50, 0.75);
+
+  /* Header/Footer */
+  --color-header-bg: #3B2847;
+  --color-footer-bg: #241836;
+
+  /* Text & accents */
+  --text-primary: #F5E6FF;
+  --text-accent:  #C8A2C8;
+  --text-hover:   #E0C7E0;
+
+  /* Spacing */
+  --space-sm:  .5rem;
+  --space-md:  1rem;
+  --space-lg:  2rem;
+
+  /* Breakpoints */
+  --bp-mobile: 768px;
+  --bp-xs:     500px;
+}

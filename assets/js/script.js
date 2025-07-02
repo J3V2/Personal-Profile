@@ -69,3 +69,4 @@ document.addEventListener('DOMContentLoaded', () => {
   // Initialize
   moveToSlide(0);
 });
+

@@ -1,0 +1,102 @@
+/* ========== HEADER ========== */
+.site-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: var(--space-md) var(--space-lg);
+  background: var(--color-header-bg);
+  border-bottom: 3px double var(--text-accent);
+  position: relative;
+  z-index: 1000;
+}
+.logo {
+  display: flex;
+  align-items: center;
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+.logo-icon {
+  width: 80px;
+  margin-right: var(--space-sm);
+  transition: transform 0.3s;
+}
+.logo-icon:hover {
+  transform: rotate(15deg);
+}
+.site-header span {
+  color: var(--text-accent);
+  margin-left: var(--space-sm);
+  transition: color 0.2s;
+}
+.site-header span:hover {
+  color: var(--text-hover);
+}
+.site-nav ul {
+  display: flex;
+  gap: var(--space-lg);
+  list-style: none;
+}
+.site-nav a {
+  position: relative;
+  padding: var(--space-sm) 0;
+  color: var(--text-accent);
+  text-decoration: none;
+  transition: color 0.2s;
+}
+.site-nav a::after {
+  content: '';
+  position: absolute;
+  bottom: -3px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: var(--text-accent);
+  transition: width 0.3s;
+}
+.site-nav a:hover {
+  color: var(--text-hover);
+}
+.site-nav a:hover::after {
+  width: 100%;
+}
+
+/* ========== NAV TOGGLE (Hamburger) ========== */
+.nav-toggle {
+  display: none;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: var(--space-sm);
+}
+.hamburger,
+.hamburger::before,
+.hamburger::after {
+  display: block;
+  width: 24px;
+  height: 3px;
+  background: var(--text-primary);
+  border-radius: 2px;
+  position: relative;
+  transition: all 0.3s;
+}
+.hamburger::before {
+  content: '';
+  position: absolute;
+  top: -8px;
+  left: 0;
+}
+.hamburger::after {
+  content: '';
+  position: absolute;
+  bottom: -8px;
+  left: 0;
+}
+.nav-toggle.open .hamburger {
+  background: transparent;
+}
+.nav-toggle.open .hamburger::before {
+  transform: rotate(45deg) translate(5px, 5px);
+}
+.nav-toggle.open .hamburger::after {
+  transform: rotate(-45deg) translate(5px, -5px);
+}
