@@ -3,11 +3,11 @@ document.documentElement.classList.add('loading');
 
 window.addEventListener('load', () => {
   const images = [
-    '/assets/images/gastly.png',
-    '/assets/images/haunter.png',
-    '/assets/images/gengar.png',
-    '/assets/images/mega gengar.png',
-    '/assets/images/gigantamax gengar.png'
+    '/assets/images/actions/gastly.png',
+    '/assets/images/actions/haunter.png',
+    '/assets/images/actions/gengar.png',
+    '/assets/images/actions/mega gengar.png',
+    '/assets/images/actions/gigantamax gengar.png'
   ];
   const evolveImg = document.getElementById('evolve-img');
   let idx = 0;
