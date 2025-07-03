@@ -3,8 +3,151 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>My Project Page</title>
-    <link rel="stylesheet" href="style.css" />
+    <title>My Projects</title>
+    <link rel="stylesheet" href="/assets/css/components/header.css" />
+    <link rel="stylesheet" href="/assets/css/components/footer.css" />
+    <link rel="stylesheet" href="/assets/css/components/variables.css" />
+    <link rel="stylesheet" href="/assets/css/components/base.css" />
+    <link rel="stylesheet" href="/assets/css/pages/project.css" />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css?family=Space Grotesk"
+    />
   </head>
-  <body></body>
+  <body>
+    <div data-include="/layout/header.html"></div>
+    <main class="projects-page">
+      <section class="projects-hero pokedex-border">
+        <h1>Featured Projects</h1>
+        <p>Take a look at some of my best work—hand-picked and Poké-rated!</p>
+      </section>
+
+      <div class="section-separator"></div>
+
+      <section class="projects-carousel">
+        <button class="carousel-arrow prev-arrow" aria-label="Previous">
+          &lt;
+        </button>
+        <div class="carousel-track-container">
+          <ul class="carousel-track">
+            <li class="carousel-slide active">
+              <img
+                src="/assets/images/screenshots/Test-checkout.png"
+                alt="HariMerch Shop"
+              />
+              <div class="slide-title">HariMerch Shop</div>
+            </li>
+            <li class="carousel-slide">
+              <img src="/assets/images/screenshots/Test-DTS.png" alt="DRS" />
+              <div class="slide-title">Document Routing System</div>
+            </li>
+            <li class="carousel-slide">
+              <img
+                src="/assets/images/screenshots/Test-comingsoon.png"
+                alt="Movie Ticketing Web Application"
+              />
+              <div class="slide-title">Movie Ticketing Web Application</div>
+            </li>
+          </ul>
+        </div>
+        <button class="carousel-arrow next-arrow" aria-label="Next">
+          &gt;
+        </button>
+
+        <div class="carousel-nav">
+          <button class="nav-dot current"></button>
+          <button class="nav-dot"></button>
+          <button class="nav-dot"></button>
+        </div>
+      </section>
+      <!-- ===== PROJECT FILTERS ===== -->
+      <section class="project-filters">
+        <div class="filters-nav">
+          <button class="filter-btn active" data-filter="all">All</button>
+          <button class="filter-btn" data-filter="System">System</button>
+          <button class="filter-btn" data-filter="Application">
+            Application
+          </button>
+          <button class="filter-btn" data-filter="Design">Design</button>
+        </div>
+
+        <div class="project-grid">
+          <div class="project-card" data-type="System">
+            <img
+              src="/assets/images/screenshots/Test-CBS.png"
+              alt="System Project"
+            />
+            <h4>CBS Simulations</h4>
+            <span class="proj-type">System</span>
+            <p>
+              Simulation to compare the Enhanced CBS and Original CBS Algorithm.
+            </p>
+          </div>
+
+          <div class="project-card" data-type="Application">
+            <img
+              src="/assets/images/screenshots/Test-admindashboard.png"
+              alt="App Project"
+            />
+            <h4>Movie Ticketing Web Applications</h4>
+            <span class="proj-type">Application</span>
+            <p>Movie Ticketing Web Applications build in ASP.NET MVC 5.</p>
+          </div>
+
+          <div class="project-card" data-type="Design">
+            <img
+              src="/assets/images/screenshots/Test-HariMerch.png"
+              alt="Design Project"
+            />
+            <h4>HariMerch Shop</h4>
+            <span class="proj-type">Design</span>
+            <p>
+              HariMerch Shop Applications, crafted in Figma both desktop and
+              mobile view.
+            </p>
+          </div>
+
+          <div class="project-card" data-type="System">
+            <img
+              src="/assets/images/screenshots/Test-DRS.png"
+              alt="System Project"
+            />
+            <h4>Document Routing System</h4>
+            <span class="proj-type">System</span>
+            <p>Document Routing System build in TALL STACK Frameworks.</p>
+          </div>
+          <div class="project-card" data-type="Application">
+            <img
+              src="/assets/images/screenshots/Test-ProjectV.png"
+              alt="Application Project"
+            />
+            <h4>Project V</h4>
+            <span class="proj-type">Application</span>
+            <p>Mobile Applications build in flutter and android studio.</p>
+          </div>
+          <div class="project-card" data-type="Application">
+            <img
+              src="/assets/images/screenshots/Test-Portfolio.png"
+              alt="Application Project"
+            />
+            <h4>Personal Portfolio</h4>
+            <span class="proj-type">Application</span>
+            <p>
+              Personal Website with a theme of Pokemon Gengar that build only in
+              html, css, and javascript.
+            </p>
+          </div>
+          <!-- Add more cards as needed -->
+        </div>
+      </section>
+    </main>
+    <div data-include="/layout/footer.html"></div>
+    <div class="lightbox" aria-hidden="true">
+      <div class="lightbox-backdrop"></div>
+      <img class="lightbox-img" src="" alt="Full size project" />
+      <button class="lightbox-close" aria-label="Close">&times;</button>
+    </div>
+    <script src="/assets/js/header-footer.js" defer></script>
+    <script src="/assets/js/project.js" defer></script>
+  </body>
 </html>

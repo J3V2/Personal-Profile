@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Home Page</title>
+    <title>Home</title>
     <link rel="stylesheet" href="/assets/css/components/header.css" />
     <link rel="stylesheet" href="/assets/css/components/footer.css" />
     <link rel="stylesheet" href="/assets/css/components/variables.css" />
@@ -27,17 +27,16 @@
         />
       </div>
     </div>
-
     <!-- header here -->
     <div data-include="/layout/header.html"></div>
     <!-- main here -->
-    <main class="home-main">
+    <main>
       <div class="section-separator"></div>
       <!-- Hero / Intro -->
       <section id="hero" class="hero-section pokedex-border">
         <div class="hero-wrapper">
           <div class="hero-content">
-            <h1>Hello, I’m Jasfer S. Daniel</h1>
+            <h1>Hello, I'm Jasfer S. Daniel</h1>
             <p>
               A Software Engineer with a knack for haunting bugs and summoning
               clean, scalable code—just like Gengar in a spooky fog.
@@ -52,7 +51,7 @@
           </div>
           <div class="hero-image">
             <img
-              src="/assets/images/Daniel - Toga(No Background).png"
+              src="/assets/images/portraits/Daniel - Toga(No Background).png"
               alt="Image of Jasfer S. Daniel"
             />
           </div>
@@ -80,7 +79,7 @@
                 Aspiring Software Engineer passionate about clean, efficient
                 code and scalable web applications. I enjoy learning new
                 technologies, solving complex problems, and bringing ideas to
-                life—always with a ghost‑type Pokémon mindset for strategy and
+                life—always with a ghost-type Pokémon mindset for strategy and
                 creativity.
               </p>
             </div>
@@ -96,10 +95,10 @@
             </button>
             <div class="accordion-content">
               <ul>
-                <li>🗣️ Communication & Collaboration</li>
-                <li>🧩 Problem Solving & Critical Thinking</li>
-                <li>⏰ Time Management & Prioritization</li>
-                <li>🤝 Team Leadership & Mentorship</li>
+                <li>🗣️ Easily Adaptable</li>
+                <li>🧩 Analytical Skills</li>
+                <li>⏰ Time Management</li>
+                <li>🤝 Team Member & Effective Communication</li>
               </ul>
             </div>
           </div>
@@ -139,37 +138,40 @@
         <h2>Featured Projects</h2>
         <div class="underline"></div>
 
-        <div class="carousel pokedex-border">
+        <div class="projects-carousel">
           <!-- Prev arrow -->
           <button class="carousel-arrow prev-arrow" aria-label="Previous slide">
             ‹
           </button>
 
-          <div class="carousel-track">
-            <!-- Slide 1 -->
-            <div class="carousel-slide">
-              <img
-                src="/assets/images/gengar_evolution_by_hattori_hako_d7sh5kk.jpg"
-                alt="Project 1"
-              />
-              <h3 class="slide-title">Project One</h3>
-            </div>
-            <!-- Slide 2 -->
-            <div class="carousel-slide">
-              <img
-                src="/assets/images/pikachu_s_ghost_stories_by_mcgmark_detdlp2.jpg"
-                alt="Project 2"
-              />
-              <h3 class="slide-title">Project Two</h3>
-            </div>
-            <!-- Slide 3 -->
-            <div class="carousel-slide">
-              <img
-                src="/assets/images/pokemon-gengar-aesthetic-desktop-wallpaper-preview.jpg"
-                alt="Project 3"
-              />
-              <h3 class="slide-title">Project Three</h3>
-            </div>
+          <!-- Aspect‑ratio container -->
+          <div class="carousel-track-container">
+            <ul class="carousel-track">
+              <!-- Slide 1 -->
+              <li class="carousel-slide active">
+                <img
+                  src="/assets/images/screenshots/Test-productpage.png"
+                  alt="HariMerch Shop"
+                />
+                <div class="slide-title">HariMerch Shop</div>
+              </li>
+              <!-- Slide 2 -->
+              <li class="carousel-slide">
+                <img
+                  src="/assets/images/screenshots/Test-track.png"
+                  alt="DRS"
+                />
+                <div class="slide-title">Document Routing System</div>
+              </li>
+              <!-- Slide 3 -->
+              <li class="carousel-slide">
+                <img
+                  src="/assets/images/screenshots/Test-allcinema.png"
+                  alt="Movie Ticketing"
+                />
+                <div class="slide-title">Movie Ticketing Web Application</div>
+              </li>
+            </ul>
           </div>
 
           <!-- Next arrow -->
@@ -194,21 +196,17 @@
         <div class="underline"></div>
         <div class="exp-cards">
           <div class="exp-card">
-            <h3>Software Engineer, ABC Tech</h3>
-            <span class="date-range">Aug 2023 – Present</span>
+            <h3>
+              Software Engineer Intern, Commission on Filipinos Overseas (CFO)
+            </h3>
+            <span class="date-range">July 2024 - August 2024</span>
             <ul>
-              <li>🕹️ Built microservices in .NET Core & Azure Functions</li>
-              <li>⚡ Improved CI/CD pipelines, cut deploy time by 40%</li>
-              <li>🔒 Enforced security best practices across services</li>
-            </ul>
-          </div>
-          <div class="exp-card">
-            <h3>Junior Developer, XYZ Solutions</h3>
-            <span class="date-range">Jun 2021 – Jul 2023</span>
-            <ul>
-              <li>⚙️ Developed React components and REST APIs</li>
-              <li>📈 Optimized SQL queries for 25% faster page loads</li>
-              <li>🤝 Collaborated cross‑functionally on Agile sprints</li>
+              <li>ASP.NET MVC Pattern & Database Management.</li>
+              <li>
+                Debug any errors in the codebase and improve code structure.
+              </li>
+              <li>Using Bootstrap for the Front-End.</li>
+              <li>Movie Ticketing Applications.</li>
             </ul>
           </div>
         </div>
@@ -217,8 +215,6 @@
       <div class="section-separator"></div>
 
       <!-- EDUCATION -->
-      <div class="section-separator"></div>
-
       <section id="education" class="education-section pokedex-border">
         <h2>Education</h2>
         <div class="underline"></div>
@@ -226,24 +222,28 @@
         <div class="edu-cards">
           <!-- Junior High -->
           <div class="edu-card pokedex-border">
-            <h3>Junior High School — ABC Middle School</h3>
-            <span class="date-range">2011 – 2014</span>
+            <h3>Manuel G. Araullo High School</h3>
+            <span class="date-range">2015 - 2019</span>
             <p>General Academic Curriculum.</p>
           </div>
 
           <!-- Senior High -->
           <div class="edu-card pokedex-border">
-            <h3>Senior High School — DEF High School</h3>
-            <span class="date-range">2014 – 2016</span>
-            <p>Science, Technology, Engineering & Mathematics (STEM) Strand.</p>
+            <h3>Philippine Christian University</h3>
+            <span class="date-range">2019 - 2021</span>
+            <p>
+              Technical-Vocational-Livelihood - Information and Communications
+              Technology (TVL - ICT) Strand; Graduate with Honors
+            </p>
           </div>
 
           <!-- University -->
           <div class="edu-card pokedex-border">
-            <h3>B.S. Computer Science — XYZ University</h3>
-            <span class="date-range">2017 – 2021</span>
+            <h3>Pamantasan ng Lungsod ng Maynila</h3>
+            <span class="date-range">2021 - 2025</span>
             <p>
-              Magna Cum Laude; Capstone: Scalable web‑based ticketing system.
+              BS. Computer Science; Cum Laude; Thesis: ENHANCEMENT OF CBS
+              ALGORITHM FOR OPTIMIZATION OF LOGISTICS MANAGEMENT
             </p>
           </div>
         </div>
@@ -253,6 +253,13 @@
     </main>
     <!-- footer here -->
     <div data-include="/layout/footer.html"></div>
+    <!-- Modal here -->
+    <!-- Lightbox Modal -->
+    <div class="lightbox" aria-hidden="true">
+      <div class="lightbox-backdrop"></div>
+      <img class="lightbox-img" src="" alt="Full size project" />
+      <button class="lightbox-close" aria-label="Close">&times;</button>
+    </div>
     <!-- Script here -->
     <script src="/assets/js/header-footer.js" defer></script>
     <script src="/assets/js/home.js" defer></script>

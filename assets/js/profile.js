@@ -1,21 +1,36 @@
-// Image compare drag
+// in assets/js/script.js or similar
 window.addEventListener('load', () => {
   const container = document.querySelector('.img-compare');
   const topImg    = container.querySelector('.img-top');
   const handle    = container.querySelector('.slider-handle');
+
   let dragging = false;
 
-  handle.addEventListener('mousedown', () => dragging = true);
-  window.addEventListener('mouseup', () => dragging = false);
-  window.addEventListener('mousemove', e => {
+  const startDrag = e => {
+    e.preventDefault();
+    dragging = true;
+  };
+  const endDrag = () => dragging = false;
+  const doDrag = e => {
     if (!dragging) return;
+    const clientX = e.touches ? e.touches[0].clientX : e.clientX;
     const rect = container.getBoundingClientRect();
-    let x = e.clientX - rect.left;
+    let x = clientX - rect.left;
     x = Math.max(0, Math.min(x, rect.width));
     const pct = (x / rect.width) * 100;
     topImg.style.width = pct + '%';
-    handle.style.left = pct + '%';
-  });
+    handle.style.left  = pct + '%';
+  };
+
+  // Mouse events
+  handle.addEventListener('mousedown', startDrag);
+  window.addEventListener('mouseup', endDrag);
+  window.addEventListener('mousemove', doDrag);
+
+  // Touch events
+  handle.addEventListener('touchstart', startDrag);
+  window.addEventListener('touchend', endDrag);
+  window.addEventListener('touchmove', doDrag);
 });
 
 document.addEventListener("DOMContentLoaded", () => {

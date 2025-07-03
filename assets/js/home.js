@@ -41,33 +41,63 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 document.addEventListener('DOMContentLoaded', () => {
-  const track   = document.querySelector('.carousel-track');
-  const slides  = Array.from(track.children);
-  const dots    = Array.from(document.querySelectorAll('.nav-dot'));
-  const prevBtn = document.querySelector('.prev-arrow');
-  const nextBtn = document.querySelector('.next-arrow');
-  let current   = 0;
+  const track = document.querySelector('.projects-section .carousel-track');
+  const slides = Array.from(track.children);
+  const dots   = Array.from(document.querySelectorAll('.projects-section .nav-dot'));
+  const prev   = document.querySelector('.projects-section .prev-arrow');
+  const next   = document.querySelector('.projects-section .next-arrow');
+  let index = 0;
 
-  function moveToSlide(index) {
-    current = (index + slides.length) % slides.length;
-    track.style.transform = `translateX(-${current * 100}%)`;
-    slides.forEach((slide,i) => slide.classList.toggle('active', i === current));
-    dots.forEach((dot,i)   => dot.classList.toggle('active', i === current));
+  function update() {
+    track.style.transform = `translateX(-${100 * index}%)`;
+    dots.forEach((d, i) => d.classList.toggle('active', i === index));
   }
 
-  // Dot navigation
-  dots.forEach(dot => {
-    dot.addEventListener('click', () => moveToSlide(parseInt(dot.dataset.slide)));
+  prev.addEventListener('click', () => {
+    index = index > 0 ? index - 1 : slides.length - 1;
+    update();
+  });
+  next.addEventListener('click', () => {
+    index = index < slides.length - 1 ? index + 1 : 0;
+    update();
+  });
+  dots.forEach((dot, i) =>
+    dot.addEventListener('click', () => { index = i; update(); })
+  );
+  // ---- Lightbox logic ----
+  const lightbox    = document.querySelector('.lightbox');
+  const lbImg       = lightbox.querySelector('.lightbox-img');
+  const lbClose     = lightbox.querySelector('.lightbox-close');
+  const lbBackdrop  = lightbox.querySelector('.lightbox-backdrop');
+
+  // Delegate all project images & carousel images
+  document.body.addEventListener('click', e => {
+    // if an <img> inside .carousel-slide or .project-card
+    if (
+      e.target.matches('.carousel-slide img, .project-card img')
+    ) {
+      const src = e.target.src;
+      lbImg.src = src;
+      lightbox.classList.add('open');
+      lightbox.setAttribute('aria-hidden', 'false');
+    }
   });
 
-  // Prev/Next
-  prevBtn.addEventListener('click', () => moveToSlide(current - 1));
-  nextBtn.addEventListener('click', () => moveToSlide(current + 1));
+  // Close on click of X or backdrop
+  const closeLB = () => {
+    lightbox.classList.remove('open');
+    lightbox.setAttribute('aria-hidden', 'true');
+    lbImg.src = '';
+  };
+  lbClose.addEventListener('click', closeLB);
+  lbBackdrop.addEventListener('click', closeLB);
 
-  // Auto-play every 5s
-  setInterval(() => moveToSlide(current + 1), 5000);
-
-  // Initialize
-  moveToSlide(0);
+  // Close on ESC key
+  document.addEventListener('keydown', e => {
+    if (e.key === 'Escape' && lightbox.classList.contains('open')) {
+      closeLB();
+    }
+  });
 });
+
 
